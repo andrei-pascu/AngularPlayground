@@ -1,0 +1,282 @@
+body,
+h1,
+p {
+    padding: 0;
+    margin: 0;
+    font-family: 'Germania One', cursive;
+}
+
+body {
+    background-image: linear-gradient(to right bottom, rgb(24, 67, 148), rgb(80, 142, 255));
+    min-height: 100vh;
+}
+
+::selection {
+    color: rgb(97, 0, 0);
+    background-color: #a6f1a6;
+}
+
+p,
+span,
+td {
+    font-size: 1.4rem;
+}
+
+.page-title {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    height: 5rem;
+    z-index: 99;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    color: white;
+    position: relative;
+}
+
+header p:before,
+header p:after {
+    content: '';
+    position: absolute;
+    top: -.3rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1rem 1.73rem 1rem;
+    border-color: transparent transparent #ffffff transparent;
+    transform: rotate(0);
+    transform-origin: 50% 67%;
+}
+
+header p:after {
+    right: -9rem;
+    animation: stresfullTriangle 10s infinite linear;
+
+}
+
+header p:before {
+    left: -9rem;
+    animation: stresfullTriangle 10s infinite linear reverse;
+
+}
+
+@keyframes stresfullTriangle {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.page-wrapper {
+    height: auto;
+}
+
+.content {
+    width: 80%;
+    margin: 4rem 10%;
+    padding: 0 0 5rem 0;
+    background-color: #398639;
+    height: auto;
+}
+
+.form-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-play {
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.form-play input {
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: solid 0.25rem;
+    margin-top: 0.3rem;
+    transition: 300ms;
+    outline: none;
+    will-change: box-shadow;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.form-play input:focus {
+    box-shadow: 0 0 .5rem .25rem rgb(255, 255, 255);
+}
+
+
+.form-play input {
+    width: 100%;
+}
+
+.form-block {
+    margin-bottom: 3rem;
+}
+
+.form-block:last-child {
+    margin-bottom: .5rem;
+}
+
+.progress-bar {
+    width: 5%;
+    overflow: hidden;
+    background-color: #3d4b8c;
+    border-radius: 1rem 1rem 1rem 1rem;
+    border: 0.3rem solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+.progress {
+    height: 100%;
+    transform: translateY(-100%);
+    background-color: #b58707;
+    transition: 500ms ease;
+}
+
+.explanation {
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+}
+
+.input-err {
+    color: red;
+    transition: 1000ms;
+}
+
+.custom-valid {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem 0 1rem 0;
+    transition: 400ms cubic-bezier(.43,.23,.9,.6);
+    box-sizing: border-box;
+    border: 0.1rem solid black;
+}
+
+.valid {
+    background-color: gray;
+    transform: rotate(45deg) rotateY(180deg);
+}
+
+.invalid {
+    background-color: lightgreen;
+    transform: rotate(0) rotateY(0);
+}
+
+.status-wrapper {
+    min-height: 2rem;
+}
+
+.boolean-animation:checked + p {
+    background-color: black;
+}
+
+.checklength-length {
+    background-color: #3d4b8c;
+    transition: 500ms;
+    height: 1.5rem;
+    width: 0;
+}
+
+.form-submit-wrapper {
+    text-align: center;
+}
+
+#submit {
+    width: 60%;
+    max-width: 15rem;
+    transform: scale(1);
+    font-weight: bold;
+    transition: all 250ms;
+    transform: scale(1);
+}
+
+#submit:disabled {
+    color: transparent;
+    background-color: transparent;
+    width: 60%;
+    max-width: 15rem;
+    transform: scale(0.85);
+}
+
+#submit:focus {
+    box-shadow: 0 0 .3rem .2rem #191303;
+    border-color: #b58707;
+}
+
+.data-wrapper {
+    min-height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0 0;
+    background-color: #398639;
+}
+
+.submitted-data-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.submitted-data-table td {
+    border: 5px solid black;
+    padding: 0.2rem;
+    width: 25%;
+}
+
+.submitted-data-table td:first-child {
+    width: 25%;
+}
+
+.async-wrapper {
+    padding: 0 10%;
+    margin-top: 5rem;
+}
+
+@media screen and (max-width: 1023px) {
+    p,
+    span,
+    td {
+        font-size: 2rem;
+    }
+
+    .content {
+        width: 95%;
+        margin: 4rem 2.5%;
+    }
+    
+    .submitted-data-table {
+        width: 85%;
+        margin: 0 7.5%;
+    }
+
+    .form-play {
+        width: 80%;
+        padding-right: 2rem;
+    }
+
+    .explanation {
+        margin-bottom: .5rem;
+        font-size: 2rem;
+    }
+
+    .form-play input {
+        font-size: 2rem;
+    }
+
+}
