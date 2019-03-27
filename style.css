@@ -220,7 +220,7 @@ header p:before {
 }
 
 .data-wrapper {
-    min-height: 10rem;
+    min-height: 12rem;
     width: 100%;
     display: flex;
     justify-content: center;
