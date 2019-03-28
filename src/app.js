@@ -1,3 +1,26 @@
-import {x} from './modules/test1';
+import {oldAngular} from './modules/old-angular/old-angular';
+import {contentWrapper} from './modules/content/content.component';
 
-console.log(x())
+
+
+oldAngular();
+
+contentWrapper();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
