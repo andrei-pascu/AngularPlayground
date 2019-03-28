@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
 
-app.controller('myController', function($scope) {
+app.controller('myController', $scope => {
     $scope.checklength = null;
     // $scope.email = 'yyy@uu.ll';
         // $scope.formData = {
@@ -11,25 +11,20 @@ app.controller('myController', function($scope) {
            
         // };
 
-    $scope.getFormState = function() {
-            var validN = ($scope.aForm.name.$valid && $scope.aForm.name.$dirty) ? 1 : 0;
-            var validE = $scope.aForm.email.$valid ? 1 : 0;
-            var validM = $scope.aForm.myInput.$valid ? 1 : 0;
-            var validP = $scope.aForm.checklength.$valid ? 1 : 0;
+    $scope.getFormState = () => {
+            let validN = ($scope.aForm.name.$valid && $scope.aForm.name.$dirty) ? 1 : 0;
+            let validE = $scope.aForm.email.$valid ? 1 : 0;
+            let validM = $scope.aForm.myInput.$valid ? 1 : 0;
+            let validP = $scope.aForm.checklength.$valid ? 1 : 0;
     
-            console.log(validN)
-            console.log(validE)
-            console.log(validM)
-            console.log(validP)
-            console.log("Form state " + (validN + validE + validM + validP))
-
-            var formValidStates = -100 + (validN + validE + validM + validP) * 25;
+            console.log(`Form input states: ${validN} + ${validE} + ${validM} + ${validP}`)
+            let formValidStates = -100 + (validN + validE + validM + validP) * 25;
             $scope.formCompletion = {
-                "transform" : 'translateY('+formValidStates+'%)'
+                "transform" : `translateY(${formValidStates}%)`
             }
     }
 
-    $scope.catchLength = function($event) {
+    $scope.catchLength = () => {
         console.log($scope.aForm.checklength.$modelValue)
 
         if ($scope.checklength == undefined) {
@@ -49,13 +44,9 @@ app.controller('myController', function($scope) {
             "width" : $scope.checklengthDigitsLength + "%",
             "background-color" : $scope.checklengthDigitsLengthMax
         }
-        var validN = ($scope.aForm.name.$valid && $scope.aForm.name.$dirty) ? 1 : 0;
-        var validE = $scope.aForm.email.$valid ? 1 : 0;
-        var validM = $scope.aForm.myInput.$valid ? 1 : 0;
-        var validP = $scope.aForm.checklength.$valid ? 1 : 0;
     }
 
-    $scope.submitMockup = function() {
+    $scope.submitMockup = () => {
         $scope.formData = {
             "Name": $scope.aForm.name.$modelValue, 
             "Email": $scope.aForm.email.$modelValue, 
@@ -63,7 +54,6 @@ app.controller('myController', function($scope) {
             "LengthCheck": $scope.aForm.checklength.$modelValue
         };
     }
-    $scope.AsyncData
     
     fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then(response => response.json())
@@ -75,10 +65,10 @@ app.controller('myController', function($scope) {
 });
 
 
-app.directive('myDirective', function() {
+app.directive('myDirective', () => {
     return {
         require: 'ngModel',
-        link: function(scope, element, attr, mCtrl) {
+        link: (scope, element, attr, mCtrl) => {
             function myValidation(value) {
                 if (value == undefined) {
                     mCtrl.$setValidity('charA', false);
