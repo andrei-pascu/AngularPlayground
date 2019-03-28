@@ -7,6 +7,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
         <title>Forms Playground</title>
         <script src="script.js"></script>
+
+
+        <!-- webpacked -->
+        
+        <script src="dist/bundle.js"></script>
     </head>
     <body>
         <div ng-controller="myController" class="page-wrapper">
@@ -57,7 +62,6 @@
                                 ng-change="getFormState();" 
                                 name="myInput"   
                             />
-                            <!-- <p>The input's valid state is: {{aForm.myInput.$valid}}</p> -->
                             
                         </div>
                         
@@ -98,6 +102,9 @@
                 </div>
             </div>
         </div>
+
+
+
 
         <!-- BREAKING DOWN INTO COMPONENTS -->
         <app-content></app-content>

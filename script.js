@@ -116,7 +116,9 @@ let myCustomInput4Template = `
     </div>
 `
 app.component('myCustomInput4', {
-    template: myCustomInput4Template
+    template: myCustomInput4Template,
+    controller: ($scope) => {
+    }
 })
 
 //COMPONENT LVL_2
@@ -177,8 +179,8 @@ let myCustomInput1Template = `
 `
 app.component('myCustomInput1', {
     template: myCustomInput1Template
-})
 
+})
 
 
 //COMPONENT LVL_2
@@ -203,7 +205,11 @@ let myCustomFormTemplate = `
     <form-completion class="progress-bar"></form-completion>
 `
 app.component('myCustomForm', {
-    template: myCustomFormTemplate
+    template: myCustomFormTemplate,
+    controller: () => {
+        this.ceva = 'x'
+        console.log(aForm)
+    }
 })
 
 
