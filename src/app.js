@@ -4,7 +4,6 @@ import {contentWrapper} from './modules/content/content.component';
 
 
 oldAngular();
-
 contentWrapper();
 
 

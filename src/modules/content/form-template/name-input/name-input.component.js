@@ -1,7 +1,6 @@
 function nameInput() {
     var app = angular.module('myApp');
 
-    //COMPONENT LVL_2
     let myCustomInput1Template = `
     <div class="form-block form-play-name">
     <span class="explanation">Checks if input contains only letters</span>  
@@ -20,10 +19,8 @@ function nameInput() {
     </div>
     `
     app.component('myCustomInput1', {
-    template: myCustomInput1Template
-
+        template: myCustomInput1Template
     })
 }
-
 
 export {nameInput};

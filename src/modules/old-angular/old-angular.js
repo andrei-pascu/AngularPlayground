@@ -3,26 +3,18 @@ function oldAngular() {
 
     app.controller('myController', $scope => {
         $scope.checklength = null;
-        // $scope.email = 'yyy@uu.ll';
-            // $scope.formData = {
-            //     "Name": 'sdad', 
-            //     "Email": 'asaaa', 
-            //     "At": 'asasdsdaa', 
-            //     "LengthCheck": 'asasdadaaa'
-            
-            // };
 
         $scope.getFormState = () => {
-                let validN = ($scope.aForm.name.$valid && $scope.aForm.name.$dirty) ? 1 : 0;
-                let validE = $scope.aForm.email.$valid ? 1 : 0;
-                let validM = $scope.aForm.myInput.$valid ? 1 : 0;
-                let validP = $scope.aForm.checklength.$valid ? 1 : 0;
-        
-                console.log(`Form input states: ${validN} + ${validE} + ${validM} + ${validP}`)
-                let formValidStates = -100 + (validN + validE + validM + validP) * 25;
-                $scope.formCompletion = {
-                    "transform" : `translateY(${formValidStates}%)`
-                }
+            let validN = ($scope.aForm.name.$valid && $scope.aForm.name.$dirty) ? 1 : 0;
+            let validE = $scope.aForm.email.$valid ? 1 : 0;
+            let validM = $scope.aForm.myInput.$valid ? 1 : 0;
+            let validP = $scope.aForm.checklength.$valid ? 1 : 0;
+    
+            console.log(`Form input states: ${validN} + ${validE} + ${validM} + ${validP}`)
+            let formValidStates = -100 + (validN + validE + validM + validP) * 25;
+            $scope.formCompletion = {
+                "transform" : `translateY(${formValidStates}%)`
+            }
         }
 
         $scope.catchLength = () => {
@@ -84,11 +76,6 @@ function oldAngular() {
             }
         };
     });
-    
-
-
-
-
-
 }
+
 export {oldAngular};

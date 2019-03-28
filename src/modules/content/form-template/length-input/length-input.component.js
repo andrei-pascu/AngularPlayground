@@ -1,8 +1,6 @@
 function lengthInput() {
     var app = angular.module('myApp');
 
-
-    //COMPONENT LVL_2
     let myCustomInput4Template = `             
     <div class="form-block form-play-checklength">
     <p class="explanation">Checks if input the input's length is 10: {{checklength.length}}</p>
@@ -19,9 +17,8 @@ function lengthInput() {
     </div>
     `
     app.component('myCustomInput4', {
-    template: myCustomInput4Template
+        template: myCustomInput4Template
     })
 }
-
 
 export {lengthInput};

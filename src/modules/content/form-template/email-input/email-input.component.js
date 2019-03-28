@@ -1,6 +1,6 @@
 function emailInput() {
     var app = angular.module('myApp');
-    //COMPONENT LVL_2
+    
     let myCustomInput2Template = `
     <div class="form-block form-play-email">
         <span class="explanation">Typical email validation: </span>  
@@ -15,10 +15,8 @@ function emailInput() {
     </div>
     `
     app.component('myCustomInput2', {
-    template: myCustomInput2Template
+        template: myCustomInput2Template
     })
-
 }
-
 
 export {emailInput};

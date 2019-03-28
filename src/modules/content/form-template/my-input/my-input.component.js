@@ -1,6 +1,6 @@
 function myInput() {
     var app = angular.module('myApp');
-    //COMPONENT LVL_2
+    
     let myCustomInput3Template = `                 
     <div class="form-block form-play-email">
     <p class="explanation">Check if string has "@"</p>
@@ -17,10 +17,8 @@ function myInput() {
     </div>
     `
     app.component('myCustomInput3', {
-    template: myCustomInput3Template
+        template: myCustomInput3Template
     })
-
 }
-
 
 export {myInput};
