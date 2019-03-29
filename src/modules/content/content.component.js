@@ -1,6 +1,6 @@
 import {formTemplate} from './form-template/form-template.component';
 
-function contentWrapper() {
+function appMainComponent() {
     var app = angular.module('myApp');
 
     formTemplate()
@@ -11,9 +11,9 @@ function contentWrapper() {
         </div>
         </div>
         `
-    app.component('appContent', {
+    app.component('appMainComponent', {
     template: appContentTemplate
     })
 }
 
-export {contentWrapper};
+export {appMainComponent};

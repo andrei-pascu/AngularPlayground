@@ -1,11 +1,9 @@
+import {template} from './form-completion.template';
+
 function formCompletion() {
     var app = angular.module('myApp');
-    
-    let formCompletionTemplate = `
-    <div class="progress" ng-style="formCompletion"></div>
-    `
     app.component('formCompletion', {
-        template: formCompletionTemplate
+        template: template
     })
 }
 

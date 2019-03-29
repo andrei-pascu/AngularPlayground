@@ -1,3 +1,5 @@
+import {template} from './submit.template';
+
 function submit() {
     var app = angular.module('myApp');
     
@@ -9,10 +11,6 @@ function submit() {
     app.component('myCustomInputSubmit', {
         template: myCustomInputSubmitTemplate
     })
-
-    // app.component('myCustomInputSubmit', {
-    //     templateUrl: 'submit/submit.component.html'
-    // })
 }
 
 export {submit};

@@ -4,6 +4,7 @@ import {myInput} from './my-input/my-input.component';
 import {lengthInput} from './length-input/length-input.component';
 import {submit} from './submit/submit.component';
 import {formCompletion} from './form-completion/form-completion.component';
+// import   './email-input/test';
 
 function formTemplate() {
     var app = angular.module('myApp');
@@ -14,7 +15,9 @@ function formTemplate() {
     lengthInput();
     submit();
     formCompletion();
-
+angular.module('myApp').component('componentName', {
+    template: 'sapdkapdpa'
+})
     let myCustomFormTemplate = `
         <form  class="form-play" name="aForm" ng-submit="submitMockup()">
             <my-custom-input-1></my-custom-input-1>
@@ -22,6 +25,7 @@ function formTemplate() {
             <my-custom-input-3></my-custom-input-3>
             <my-custom-input-4></my-custom-input-4>
             <my-custom-input-submit></my-custom-input-submit>
+            <component-name></component-name>
         </form>
         <form-completion class="progress-bar"></form-completion>
         `
@@ -31,3 +35,14 @@ function formTemplate() {
 }
 
 export {formTemplate};
+
+
+
+
+//Made global var
+//Imported -> it's accesible in f
+
+//Duplicate appVar crash //[$injector:nomod] //[$injector:modulerr]
+
+// console.log(defaultExport)
+// console.log(x)
