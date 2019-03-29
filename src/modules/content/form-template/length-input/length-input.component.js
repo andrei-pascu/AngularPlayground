@@ -1,8 +1,8 @@
 import {template} from './length-input.template';
 
-console.log('length-input.component.js loaded')
 
 function lengthInput() {
+    console.log('length-input.component.js loaded')
     var app = angular.module('myApp');
 
     app.component('myCustomInput4', {

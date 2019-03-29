@@ -1,9 +1,9 @@
 import {template} from './content.template';
 import {formTemplate} from './form-template/form-template.component';
 
-console.log('content.component.js loaded')
 
 function appMainComponent() {
+    console.log('content.component.js loaded')
     var app = angular.module('myApp');
 
     formTemplate()

@@ -4,6 +4,7 @@ export const template = `
     <div>
         <span ng-show="!aForm.name.$valid && aForm.name.$dirty" class="input-err">Must contain just letters</span>
         <span ng-hide="!aForm.name.$valid && aForm.name.$dirty" class="">Valid String: {{$ctrl.name | uppercase}}</span>
+        <span ng-show="$ctrl.name">Haide bobby</span>
     </div>
     <input  
         ng-model="$ctrl.name" 

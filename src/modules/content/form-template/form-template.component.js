@@ -6,9 +6,10 @@ import {submit} from './submit/submit.component';
 import {formCompletion} from './form-completion/form-completion.component';
 import   './email-input/test';
 
-console.log('form-template.component.js loaded')
+
 
 function formTemplate() {
+    console.log('form-template.component.js loaded')
     var app = angular.module('myApp');
 
     nameInput();
@@ -20,6 +21,10 @@ function formTemplate() {
 // angular.module('myApp').component('componentName', {
 //     template: 'sapdkapdpa'
 // })
+
+
+    //Cant get the value directly because my-custom-input is a div
+    //There must be some kind of attribute to pass data
     let myCustomFormTemplate = `
         <form  class="form-play" name="aForm" ng-submit="submitMockup()">
             <my-custom-input-1></my-custom-input-1>
@@ -32,7 +37,12 @@ function formTemplate() {
         <form-completion class="progress-bar"></form-completion>
         `
     app.component('myCustomForm', {
-        template: myCustomFormTemplate
+        template: myCustomFormTemplate,
+        controller: function test() {
+            //Succesfull pass data to name-input child
+            this.hhh = 'X';
+            console.log('ceva')
+        }
     })
 }
 
