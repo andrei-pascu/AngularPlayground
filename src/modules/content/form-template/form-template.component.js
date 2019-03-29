@@ -41,7 +41,7 @@ function formTemplate() {
     app.component('myCustomForm', {
         template: myCustomFormTemplate,
         controller: function test() {
-            //Succesfull pass data to name-input child
+            //Succesfull pass data to child controller //require:{dependencyCtrl:'parentComponentName'}
             this.hhh = 'X';
             console.log('ceva')
         }
