@@ -1,11 +1,13 @@
-import {oldAngular} from './modules/old-angular/old-angular';
+// import {oldAngular} from './modules/old-angular/old-angular';
 import {appMainComponent} from './modules/content/content.component';
-// import 'angular';
+// import './modules/content/content.component';
 
-angular.module("myApp", []);
+console.log('app.js loaded')
+
+var app = angular.module("myApp", []);
 // app= angular.module('myApp', []);
 
-oldAngular();
+// oldAngular();
 appMainComponent();
 
 

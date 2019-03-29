@@ -4,7 +4,9 @@ import {myInput} from './my-input/my-input.component';
 import {lengthInput} from './length-input/length-input.component';
 import {submit} from './submit/submit.component';
 import {formCompletion} from './form-completion/form-completion.component';
-// import   './email-input/test';
+import   './email-input/test';
+
+console.log('form-template.component.js loaded')
 
 function formTemplate() {
     var app = angular.module('myApp');
@@ -15,9 +17,9 @@ function formTemplate() {
     lengthInput();
     submit();
     formCompletion();
-angular.module('myApp').component('componentName', {
-    template: 'sapdkapdpa'
-})
+// angular.module('myApp').component('componentName', {
+//     template: 'sapdkapdpa'
+// })
     let myCustomFormTemplate = `
         <form  class="form-play" name="aForm" ng-submit="submitMockup()">
             <my-custom-input-1></my-custom-input-1>
@@ -43,6 +45,8 @@ export {formTemplate};
 //Imported -> it's accesible in f
 
 //Duplicate appVar crash //[$injector:nomod] //[$injector:modulerr]
+
+//Correct import, refferencing app module err
 
 // console.log(defaultExport)
 // console.log(x)

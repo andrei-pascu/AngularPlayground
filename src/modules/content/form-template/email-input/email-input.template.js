@@ -3,10 +3,11 @@ export const template = `
         <span class="explanation">Typical email validation: </span>  
         <span ng-show="aForm.email.$invalid && aForm.email.$dirty" class="input-err">Invalid Email</span> 
         <input 
-            ng-model="email" 
+            ng-model="$ctrl.email" 
             required 
             type="email" 
-            ng-change="nameValidation(); getFormState();"  
+            value="$ctrl.value"
+            ng-change="$ctrl.nameValidation();"  
             name="email"  
         />  
     </div>

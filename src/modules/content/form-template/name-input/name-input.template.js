@@ -3,14 +3,15 @@ export const template = `
     <span class="explanation">Checks if input contains only letters</span>  
     <div>
         <span ng-show="!aForm.name.$valid && aForm.name.$dirty" class="input-err">Must contain just letters</span>
-        <span ng-hide="!aForm.name.$valid && aForm.name.$dirty" class="">Valid String: {{name | uppercase}}</span>
+        <span ng-hide="!aForm.name.$valid && aForm.name.$dirty" class="">Valid String: {{$ctrl.name | uppercase}}</span>
     </div>
     <input  
-        ng-model="name" 
+        ng-model="$ctrl.name" 
         required
         type="text"
+        value="$ctrl.value"
         ng-pattern="/^[a-zA-Z]+$/"  
-        ng-change="getFormState();"
+        ng-change="$ctrl.getFormState();"
         name="name" 
     />       
     </div>
