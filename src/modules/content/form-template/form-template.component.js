@@ -10,6 +10,8 @@ import   './email-input/test';
 
 function formTemplate() {
     console.log('form-template.component.js loaded')
+    //angular.module('myApp') Refferencing <- outside the function block 
+    //causes it to be called before angular.module('myApp', []) == crash
     var app = angular.module('myApp');
 
     nameInput();
@@ -50,13 +52,3 @@ export {formTemplate};
 
 
 
-
-//Made global var
-//Imported -> it's accesible in f
-
-//Duplicate appVar crash //[$injector:nomod] //[$injector:modulerr]
-
-//Correct import, refferencing app module err
-
-// console.log(defaultExport)
-// console.log(x)

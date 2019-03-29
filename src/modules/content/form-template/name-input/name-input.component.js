@@ -22,6 +22,7 @@ function nameInput() {
         controller: Ctrl,
         controllerAs: '$ctrl',
         require: {
+                          //'parentComponentName'
           dependencyCtrl: '^myCustomForm'
         },
     })
