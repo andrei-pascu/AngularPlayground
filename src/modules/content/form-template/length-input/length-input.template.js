@@ -9,7 +9,7 @@ export const template = `
         required 
         type="text" 
         ng-change="$ctrl.catchLength();" 
-        name="$ctrl.name" 
+        name="checkLength" 
     />
     </div>
     `

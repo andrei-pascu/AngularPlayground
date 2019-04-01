@@ -2,8 +2,9 @@ import {template} from './email-input.template';
 
 class Ctrl {
     nameValidation($event) {
+        // console.log(this.formReference.email.$$classCache)
         var value = this.email
-        console.log(value)
+        // console.log(value)
         this.onChange({
             $value: value
         })
@@ -11,7 +12,7 @@ class Ctrl {
         // console.log($ctrl.email.$valid)
 
         var data = this.email
-        this.dependencyCtrl.getValidityState(1, data.length)
+        this.dependencyCtrl.getValidityState(1, data)
         // this.dependencyCtrl.getValidityState(1, data)
     }
 }
@@ -21,7 +22,8 @@ function emailInput() {
         template: template,
         bindings: {
             value: '<',
-            onChange: '&'
+            onChange: '&',
+            formReference: '<'
         },
         controller: Ctrl,
         controllerAs: '$ctrl',

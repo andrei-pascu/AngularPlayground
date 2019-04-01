@@ -28,9 +28,9 @@ function formTemplate() {
     //Cant get the value directly because my-custom-input is a div
     //There must be some kind of attribute to pass data
     let myCustomFormTemplate = `
-        <form  class="form-play" name="aForm" ng-submit="submitMockup()">
-            <my-custom-input-1 passing="$ctrl.passing"></my-custom-input-1>
-            <my-custom-input-2></my-custom-input-2>
+        <form class="form-play" name="$ctrl.aForm" ng-submit="submitMockup()">
+            <my-custom-input-1 form-reference="aForm" passing="$ctrl.passing"></my-custom-input-1>
+            <my-custom-input-2 form-reference="aForm"></my-custom-input-2>
             <my-custom-input-3></my-custom-input-3>
             <my-custom-input-4></my-custom-input-4>
             <my-custom-input-submit></my-custom-input-submit>
@@ -50,17 +50,24 @@ function formTemplate() {
             this.state = [0,0,0,0]
 
             this.getValidityState = function(index, data) {
+                // console.log(this.aForm.name.$$classCache["ng-valid-pattern"])
+                console.log(this.aForm.name.$valid)
+                console.log(this.aForm.email.$valid)
+                console.log(this.aForm.myInput.$valid)
+                console.log(this.aForm.checkLength.$valid)
+                // console.log(this.aForm)
                 this.state[index] = data;
-                console.log(this.state)
+                // console.log(this.state)
 
                 //PLACEHOLDER_FOR(valid input states)
                 this.passing = {'transform': `translateY(${(this.state.filter(data => data > 0).length)*25}%)`};
-                console.log(this.passing)
+                // console.log(this.passing)
             }
         },
         controllerAs: '$ctrl',
         bindings: {
             // dataTest: '<'
+            aForm: '&'
         }
     })
 }

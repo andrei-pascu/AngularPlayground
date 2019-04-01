@@ -2,7 +2,7 @@ import {template} from './form-completion.template';
 
 class Ctrl {
     myTest() {
-        console.log(this)
+        // console.log(this)
     }
 }
 

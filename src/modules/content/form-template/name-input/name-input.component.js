@@ -2,6 +2,7 @@ import {template} from './name-input.template';
 
 class Ctrl {
     getFormState($event) {
+        // console.log(this.formReference)
         //INFO:
         //prints only if it's valid
         //dependencyCtrl == 'this' of parent
@@ -19,10 +20,10 @@ class Ctrl {
         //     alert('_' + x)
         // }
         
-        console.log(this)
+        // console.log(this)
         var data = this.name
         
-        this.dependencyCtrl.getValidityState(0, data.length)
+        this.dependencyCtrl.getValidityState(0, 1)
         // this.dependencyCtrl.getValidityState(0, data)
     }
 }
@@ -41,7 +42,8 @@ function nameInput() {
             // onChange: '&',
             // omega: '&',
             // dataTest: '='
-            passing: '='
+            passing: '=',
+            formReference: '<'
         },
         controller: Ctrl,
         controllerAs: '$ctrl',
