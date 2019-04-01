@@ -2,17 +2,18 @@ import {template} from './email-input.template';
 
 class Ctrl {
     nameValidation($event) {
-        // const value = $event.target.value;
-        // this.onChange({
-        //     $value: value
-        // })
+        var value = this.email
+        console.log(value)
+        this.onChange({
+            $value: value
+        })
         // console.log(value)
         // console.log($ctrl.email.$valid)
 
         // getFormState();
-        console.log(this)
+        // console.log(this)
         var data = this.email
-        this.dependencyCtrl.myMethod4(data)
+        // this.dependencyCtrl.myMethod4(data)
         this.dependencyCtrl.getValidityState(1, data)
     }
 }

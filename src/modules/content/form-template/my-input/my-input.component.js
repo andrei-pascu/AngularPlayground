@@ -2,9 +2,9 @@ import {template} from './my-input.template';
 
 class Ctrl {
     getFormState($event) {
-        console.log(this)
+        // console.log(this)
         var data = this.myInput
-        this.dependencyCtrl.myMethod2(data)
+        // this.dependencyCtrl.myMethod2(data)
         this.dependencyCtrl.getValidityState(2, data)
     }
 }

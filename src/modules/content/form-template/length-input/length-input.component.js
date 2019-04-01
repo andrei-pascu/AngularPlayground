@@ -2,15 +2,15 @@ import {template} from './length-input.template';
 
 class Ctrl {
     catchLength($event) {
-        console.log(this.checklength)
+        // console.log(this.checklength)
         var data = this.checklength
-        this.dependencyCtrl.myMethod3(data)
+        // this.dependencyCtrl.myMethod3(data)
         this.dependencyCtrl.getValidityState(3, data)
     }
 }
 
 function lengthInput() {
-    console.log('length-input.component.js loaded')
+    // console.log('length-input.component.js loaded')
     var app = angular.module('myApp');
 
     app.component('myCustomInput4', {

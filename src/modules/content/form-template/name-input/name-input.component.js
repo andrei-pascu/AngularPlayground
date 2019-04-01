@@ -22,7 +22,8 @@ class Ctrl {
         //     alert('_' + x)
         // }
         // omega()
-        console.log('name inputed')
+        // console.log('name inputed')
+        console.log(this)
         var data = this.name
         // this.dependencyCtrl.myMethod1(data)
         this.dependencyCtrl.getValidityState(0, data)
@@ -41,7 +42,8 @@ function nameInput() {
             value: '<',
             onChange: '&',
             omega: '&',
-            data: '='
+            // dataTest: '='
+            passing: '='
         },
         controller: Ctrl,
         controllerAs: '$ctrl',
