@@ -1,7 +1,7 @@
 import {template} from './form-completion.template';
 
 class Ctrl {
-    EXE() {
+    myTest() {
         console.log(this)
     }
 }
@@ -10,6 +10,9 @@ function formCompletion() {
     var app = angular.module('myApp');
     app.component('formCompletion', {
         template: template,
+        bindings: {
+            passing: '='
+        },
         controller: Ctrl,
         controllerAs: '$ctrl',
         require: {

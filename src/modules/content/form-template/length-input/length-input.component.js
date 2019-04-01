@@ -4,8 +4,9 @@ class Ctrl {
     catchLength($event) {
         // console.log(this.checklength)
         var data = this.checklength
-        // this.dependencyCtrl.myMethod3(data)
-        this.dependencyCtrl.getValidityState(3, data)
+        
+        this.dependencyCtrl.getValidityState(3, data.length)
+        // this.dependencyCtrl.getValidityState(3, data)
     }
 }
 

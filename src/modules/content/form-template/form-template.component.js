@@ -36,56 +36,27 @@ function formTemplate() {
             <my-custom-input-submit></my-custom-input-submit>
             <component-name></component-name>
         </form>
-        <form-completion class="progress-bar"></form-completion>
+        <form-completion passing="$ctrl.passing" class="progress-bar"></form-completion>
         <h1 style="position: absolute; top: 0;">State->{{$ctrl.state}}</h1>
         `
 
-        // <my-custom-input-1 dataTest="{{$ctrl.dataTest}}"></my-custom-input-1>
-        // <h1 style="position: absolute; top: 0;">From ComponentChildNAME -> Parent: {{$ctrl.interpolationTest}}</h1>
 
 
 
     app.component('myCustomForm', {
         template: myCustomFormTemplate,
         controller: function() {
-            //Succesfull pass data to child controller //require:{dependencyCtrl:'parentComponentName'}
-            this.passing = '14541817817818161681768';
+            this.passing = 'Ssss';
             this.state = [0,0,0,0]
 
             this.getValidityState = function(index, data) {
                 this.state[index] = data;
-                this.dataTest = data
-                this.passing = data;
-                // console.log(this.state)
+                console.log(this.state)
+
+                //PLACEHOLDER_FOR(valid input states)
+                this.passing = {'transform': `translateY(${(this.state.filter(data => data > 0).length)*25}%)`};
+                console.log(this.passing)
             }
-
-
-            // this.state1 = '';
-            // this.state2 = '';
-            // this.state3 = '';
-            // this.state4 = '';
-
-            // this.myMethod = () => 1;
-            // this.myMethod1 = function(data) {
-            //     console.log('_DYMANIC_FROM_INPUT: ' + data)
-            //     this.interpolationTest = data;
-            //     this.state1 = data;
-            // }
-            // this.myMethod2 = function(data) {
-            //     console.log('_DYMANIC_FROM_INPUT: ' + data)
-            //     this.state2 = data;
-            // }
-            // this.myMethod3 = function(data) {
-            //     console.log('_DYMANIC_FROM_INPUT: ' + data)
-            //     this.state3 = data;
-            // }
-            // this.myMethod4 = function(data) {
-            //     console.log('_DYMANIC_FROM_INPUT: ' + data)
-            //     this.state4 = data;
-            // }
-            // function methodOnParent(myInsideThisStuff) {
-            //     console.log(myInsideThisStuff)
-            // }
         },
         controllerAs: '$ctrl',
         bindings: {

@@ -2,15 +2,12 @@ import {template} from './name-input.template';
 
 class Ctrl {
     getFormState($event) {
+        //INFO:
         //prints only if it's valid
-        // console.log(this.name);
         //dependencyCtrl == 'this' of parent
         
-        // console.log(this.dependencyCtrl);
-        // console.log(this.dependencyCtrl.myMethod());
-        // this.myChildThisStuff({myInsideThisStuff: this.name})
-        // return x
 
+        //FAILED: [Child->Parent]
         // var $ctrl = this;
         // $ctrl.save = function(data) {
         //     $ctrl.childCallback({'keyName':data})
@@ -21,17 +18,18 @@ class Ctrl {
         // function omega(x) {
         //     alert('_' + x)
         // }
-        // omega()
-        // console.log('name inputed')
+        
         console.log(this)
         var data = this.name
-        // this.dependencyCtrl.myMethod1(data)
-        this.dependencyCtrl.getValidityState(0, data)
+        
+        this.dependencyCtrl.getValidityState(0, data.length)
+        // this.dependencyCtrl.getValidityState(0, data)
     }
 }
 
 function nameInput() {
     var app = angular.module('myApp');
+    //QUESTIONS:
     //How to check valid state
     //How to emit data to parent
     //How to emit valid state to form component
@@ -39,9 +37,9 @@ function nameInput() {
         template: template,
         //Binds data to Ctrl
         bindings: {
-            value: '<',
-            onChange: '&',
-            omega: '&',
+            // value: '<',
+            // onChange: '&',
+            // omega: '&',
             // dataTest: '='
             passing: '='
         },

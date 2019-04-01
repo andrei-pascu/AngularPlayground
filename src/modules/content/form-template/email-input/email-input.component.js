@@ -7,14 +7,12 @@ class Ctrl {
         this.onChange({
             $value: value
         })
-        // console.log(value)
+        //FAILED:
         // console.log($ctrl.email.$valid)
 
-        // getFormState();
-        // console.log(this)
         var data = this.email
-        // this.dependencyCtrl.myMethod4(data)
-        this.dependencyCtrl.getValidityState(1, data)
+        this.dependencyCtrl.getValidityState(1, data.length)
+        // this.dependencyCtrl.getValidityState(1, data)
     }
 }
 

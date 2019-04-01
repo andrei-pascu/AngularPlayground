@@ -4,8 +4,9 @@ class Ctrl {
     getFormState($event) {
         // console.log(this)
         var data = this.myInput
-        // this.dependencyCtrl.myMethod2(data)
-        this.dependencyCtrl.getValidityState(2, data)
+        
+        this.dependencyCtrl.getValidityState(2, data.length)
+        // this.dependencyCtrl.getValidityState(2, data)
     }
 }
 

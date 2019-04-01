@@ -144,7 +144,7 @@ header p:before {
 
 .progress {
     height: 100%;
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
     background-color: #b58707;
     transition: 500ms ease;
 }
