@@ -49,21 +49,56 @@ function formTemplate() {
             this.passing = 'Ssss';
             this.state = [0,0,0,0]
 
-            this.getValidityState = function(index, data) {
+            this.getValidityState = function() {
                 // console.log(this.aForm.name.$$classCache["ng-valid-pattern"])
-                console.log(this.aForm.name.$valid)
-                console.log(this.aForm.email.$valid)
-                console.log(this.aForm.myInput.$valid)
-                console.log(this.aForm.checkLength.$valid)
+                // console.log(this.aForm.name.$valid ? 1 : 0)
+                // console.log(this.aForm.email.$valid ? 1 : 0)
+                // console.log(this.aForm.myInput.$valid ? 1 : 0)
+                // console.log(this.aForm.checkLength.$valid ? 1 : 0)
+
+
+
+
+
+
+
+                // // console.log(this.aForm.name.$$classCache["ng-valid-pattern"])
+                // let validN = (this.aForm.name.$valid && this.aForm.name.$dirty) ? 1 : 0;
+                // let validE = this.aForm.email.$valid ? 1 : 0;
+                // let validM = this.aForm.myInput.$valid ? 1 : 0;
+                // let validP = this.aForm.checklength.$valid ? 1 : 0;
+                //             console.log(`Form input states: ${validN} + ${validE} + ${validM} + ${validP}`)
+
+
+
+
+
+
+
+
                 // console.log(this.aForm)
-                this.state[index] = data;
+                // this.state[index] = data;
                 // console.log(this.state)
 
                 //PLACEHOLDER_FOR(valid input states)
-                this.passing = {'transform': `translateY(${(this.state.filter(data => data > 0).length)*25}%)`};
+                // this.passing = {'transform': `translateY(${(this.state.filter(data => data > 0).length)*25}%)`};
                 // console.log(this.passing)
             }
         },
+        //INFO: Getting data from child components into progress bar
+        // controller: function() {
+        //     this.passing = 'Ssss';
+        //     this.state = [0,0,0,0]
+
+        //     this.getValidityState = function(index, data) {
+        //         this.state[index] = data;
+        //         // console.log(this.state)
+
+        //         //PLACEHOLDER_FOR(valid input states)
+        //         this.passing = {'transform': `translateY(${(this.state.filter(data => data > 0).length)*25}%)`};
+        //         // console.log(this.passing)
+        //     }
+        // },
         controllerAs: '$ctrl',
         bindings: {
             // dataTest: '<'

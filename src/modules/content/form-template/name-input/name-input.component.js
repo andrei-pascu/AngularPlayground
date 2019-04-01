@@ -22,8 +22,10 @@ class Ctrl {
         
         // console.log(this)
         var data = this.name
-        
-        this.dependencyCtrl.getValidityState(0, 1)
+        console.log(this.dependencyCtrl.aForm.name.$valid)
+        // this.dependencyCtrl.getValidityState()
+        //INFO: Getting data from child components into progress bar
+        // this.dependencyCtrl.getValidityState(0, data.length)
         // this.dependencyCtrl.getValidityState(0, data)
     }
 }

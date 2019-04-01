@@ -5,7 +5,9 @@ class Ctrl {
         // console.log(this.checklength)
         var data = this.checklength
         
-        this.dependencyCtrl.getValidityState(3, data.length)
+        this.dependencyCtrl.getValidityState()
+        //INFO: Getting data from child components into progress bar
+        // this.dependencyCtrl.getValidityState(3, data.length)
         // this.dependencyCtrl.getValidityState(3, data)
     }
 }
