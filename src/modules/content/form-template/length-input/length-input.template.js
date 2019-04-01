@@ -5,11 +5,11 @@ export const template = `
         <p ng-style="checklengthLength" class="checklength-length"></p>
     </div> 
     <input 
-        ng-model="checklength" 
+        ng-model="$ctrl.checklength" 
         required 
         type="text" 
-        ng-change="catchLength($event); getFormState();" 
-        name="checklength" 
+        ng-change="$ctrl.catchLength();" 
+        name="$ctrl.name" 
     />
     </div>
     `
