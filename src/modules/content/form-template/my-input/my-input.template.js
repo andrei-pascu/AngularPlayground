@@ -5,11 +5,12 @@ export const template = `
         <p class="input-err custom-valid {{aForm.myInput.$valid ? 'invalid' : 'valid'}}"></p>
     </div> 
     <input
-        ng-model="myInput"
+        ng-model="$ctrl.myInput"
         required 
-        my-directive
-        ng-change="getFormState();" 
+        type="text"
+        ng-change="$ctrl.getFormState();" 
         name="myInput"   
     />
     </div>
     `
+    

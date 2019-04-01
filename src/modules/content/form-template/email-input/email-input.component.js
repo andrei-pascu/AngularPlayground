@@ -10,6 +10,10 @@ class Ctrl {
         // console.log($ctrl.email.$valid)
 
         // getFormState();
+        console.log(this)
+        var data = this.email
+        this.dependencyCtrl.myMethod4(data)
+        this.dependencyCtrl.getValidityState(1, data)
     }
 }
 
@@ -21,7 +25,11 @@ function emailInput() {
             onChange: '&'
         },
         controller: Ctrl,
-        controllerAs: '$ctrl'
+        controllerAs: '$ctrl',
+        require: {
+                          //'parentComponentName'
+          dependencyCtrl: '^myCustomForm'
+        }
     })
 }
 

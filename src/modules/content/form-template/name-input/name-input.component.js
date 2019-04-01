@@ -22,9 +22,10 @@ class Ctrl {
         //     alert('_' + x)
         // }
         // omega()
+        console.log('name inputed')
         var data = this.name
-        // console.log(this);
-        console.log(this.dependencyCtrl.myMethod(data));
+        // this.dependencyCtrl.myMethod1(data)
+        this.dependencyCtrl.getValidityState(0, data)
     }
 }
 
@@ -47,7 +48,7 @@ function nameInput() {
         require: {
                           //'parentComponentName'
           dependencyCtrl: '^myCustomForm'
-        },
+        }
     })
 }
 

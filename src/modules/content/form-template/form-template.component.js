@@ -45,11 +45,34 @@ function formTemplate() {
             //Succesfull pass data to child controller //require:{dependencyCtrl:'parentComponentName'}
             this.hhh = 'X';
             console.log(this)
+            this.state1 = '';
+            this.state2 = '';
+            this.state3 = '';
+            this.state4 = '';
+            this.state = [0,0,0,0]
+
+            this.getValidityState = function(index, data) {
+                this.state[index] = data;
+                console.log(this.state)
+            }
 
             // this.myMethod = () => 1;
-            this.myMethod = function(data) {
+            this.myMethod1 = function(data) {
                 console.log('_DYMANIC_FROM_INPUT: ' + data)
                 this.interpolationTest = data;
+                this.state1 = data;
+            }
+            this.myMethod2 = function(data) {
+                console.log('_DYMANIC_FROM_INPUT: ' + data)
+                this.state2 = data;
+            }
+            this.myMethod3 = function(data) {
+                console.log('_DYMANIC_FROM_INPUT: ' + data)
+                this.state3 = data;
+            }
+            this.myMethod4 = function(data) {
+                console.log('_DYMANIC_FROM_INPUT: ' + data)
+                this.state4 = data;
             }
 
 //             function methodOnParent(myInsideThisStuff) {

@@ -10,7 +10,6 @@ export const template = `
         ng-model="$ctrl.name" 
         required
         type="text"
-        value="$ctrl.value"
         ng-pattern="/^[a-zA-Z]+$/"  
         ng-change="$ctrl.getFormState();"
         name="name" 
