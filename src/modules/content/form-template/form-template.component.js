@@ -29,7 +29,7 @@ function formTemplate() {
     //There must be some kind of attribute to pass data
     let myCustomFormTemplate = `
         <form  class="form-play" name="aForm" ng-submit="submitMockup()">
-            <my-custom-input-1></my-custom-input-1>
+            <my-custom-input-1 data="$ctrl.data"></my-custom-input-1>
             <my-custom-input-2></my-custom-input-2>
             <my-custom-input-3></my-custom-input-3>
             <my-custom-input-4></my-custom-input-4>
@@ -37,13 +37,28 @@ function formTemplate() {
             <component-name></component-name>
         </form>
         <form-completion class="progress-bar"></form-completion>
+        <h1 style="position: absolute; top: 0;">From ComponentChildNAME -> Parent: {{$ctrl.interpolationTest}}</h1>
         `
     app.component('myCustomForm', {
         template: myCustomFormTemplate,
-        controller: function test() {
+        controller: function() {
             //Succesfull pass data to child controller //require:{dependencyCtrl:'parentComponentName'}
             this.hhh = 'X';
-            console.log('ceva')
+            console.log(this)
+
+            // this.myMethod = () => 1;
+            this.myMethod = function(data) {
+                console.log('_DYMANIC_FROM_INPUT: ' + data)
+                this.interpolationTest = data;
+            }
+
+//             function methodOnParent(myInsideThisStuff) {
+// console.log(myInsideThisStuff)
+//             }
+        },
+        controllerAs: '$ctrl',
+        bindings: {
+            data: '<'
         }
     })
 }

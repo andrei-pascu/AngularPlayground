@@ -14,6 +14,7 @@ export const template = `
         ng-pattern="/^[a-zA-Z]+$/"  
         ng-change="$ctrl.getFormState();"
         name="name" 
+        data = "$ctrl.data"
     />       
     </div>
     `
