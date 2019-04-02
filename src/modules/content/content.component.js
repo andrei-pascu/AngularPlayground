@@ -1,5 +1,6 @@
 import {template} from './content.template';
 import {formTemplate} from './form-template/form-template.component';
+// import {myService} from '../services/myTest.service.js';
 
 
 function appMainComponent() {

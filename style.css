@@ -95,12 +95,24 @@ header p:before {
 .form-container {
     height: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-system-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
 }
 
 .form-play {
     width: 50%;
     padding-right: 2rem;
+}
+
+.data-table-container {
+    min-width: 100%;;
 }
 
 .form-play input {
@@ -250,11 +262,13 @@ header p:before {
 
 @media screen and (max-width: 1023px) {
     p,
-    span,
-    td {
+    span  {
         font-size: 2rem;
     }
 
+    td {
+        font-size: 1.2rem;
+    }
     .content {
         width: 95%;
         margin: 4rem 2.5%;

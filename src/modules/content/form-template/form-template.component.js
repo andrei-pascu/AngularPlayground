@@ -4,21 +4,60 @@ import {myInput} from './my-input/my-input.component';
 import {lengthInput} from './length-input/length-input.component';
 import {submit} from './submit/submit.component';
 import {formCompletion} from './form-completion/form-completion.component';
+import {displayData} from './display-data/display-data.component';
 import   './email-input/test';
 
+class Ctrl {
+    getValidityState () {
+        let validN = (this.aForm.name.$valid && this.aForm.name.$dirty) ? 1 : 0;
+        let validE = this.aForm.email.$valid ? 1 : 0;
+        let validM = this.aForm.myInput.$valid ? 1 : 0;
+        let validP = this.aForm.checkLength.$valid ? 1 : 0;
+        let formValidState = parseInt(validN + validE + validM + validP) ;
+        let formValidStateAnimation =  -100 + formValidState*25;
+        this.passing = {'transform': `translateY(${formValidStateAnimation}%)`};
 
+        if (formValidState !== 4) {
+            this.aForm.$invalid = true;
+        } else {
+            this.aForm.$invalid = false;
+        }
+        
+        
+        this.submitMockup = () => {
+            // var that = this;
+            let name = this.aForm.name.$viewValue;
+            let email = this.aForm.email.$viewValue;
+            let myInput = this.aForm.myInput.$viewValue;
+            let checkLength = this.aForm.checkLength.$viewValue;
+            console.log(this.aForm.name.$viewValue)
+            console.log(this.aForm.email.$viewValue)
+            console.log(this.aForm.myInput.$viewValue)
+            console.log(this.aForm.checkLength.$viewValue)
+            this.submitted = {
+                "Name": name, 
+                "Email": email, 
+                "At": myInput, 
+                "LengthCheck": checkLength
+            };
+        }
+    }
+
+}
 
 function formTemplate() {
     var app = angular.module('myApp');
-
+    
     nameInput();
     emailInput();
     myInput();
     lengthInput();
     submit();
     formCompletion();
+    displayData()
     let myCustomFormTemplate = `
-        <form class="form-play" name="$ctrl.aForm" ng-submit="submitMockup()">
+    <div class="form-system-container">
+        <form class="form-play" name="$ctrl.aForm" ng-submit="$ctrl.submitMockup()">
             <my-custom-input-1 form-reference="aForm" passing="$ctrl.passing"></my-custom-input-1>
             <my-custom-input-2 form-reference="aForm"></my-custom-input-2>
             <my-custom-input-3></my-custom-input-3>
@@ -27,27 +66,14 @@ function formTemplate() {
             <component-name></component-name>
         </form>
         <form-completion passing="$ctrl.passing" class="progress-bar"></form-completion>
+    </div>
+    
+    <display-data-component class="data-table-container" submitted="$ctrl.submitted"></display-data-component>
         `
 
     app.component('myCustomForm', {
         template: myCustomFormTemplate,
-        controller: function() {
-            this.getValidityState = function() {
-                let validN = (this.aForm.name.$valid && this.aForm.name.$dirty) ? 1 : 0;
-                let validE = this.aForm.email.$valid ? 1 : 0;
-                let validM = this.aForm.myInput.$valid ? 1 : 0;
-                let validP = this.aForm.checkLength.$valid ? 1 : 0;
-                let formValidState = parseInt(validN + validE + validM + validP) ;
-                let formValidStateAnimation =  -100 + formValidState*25;
-                this.passing = {'transform': `translateY(${formValidStateAnimation}%)`};
-
-                if (formValidState !== 4) {
-                    this.aForm.$invalid = true;
-                } else {
-                    this.aForm.$invalid = false;
-                }
-            }
-        },
+        controller: Ctrl,
         controllerAs: '$ctrl',
         bindings: {
             // dataTest: '<'

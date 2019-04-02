@@ -1,13 +1,13 @@
-import {template} from './submit.template';
+import {template} from './display-data.template';
 
 class Ctrl {
-    x(){}
+    handleData() {
+    }
 }
 
-function submit() {
+function displayData() {
     var app = angular.module('myApp');
-    
-    app.component('myCustomInputSubmit', {
+    app.component('displayDataComponent', {
         template: template,
         bindings: {
             submitted: '='
@@ -20,8 +20,4 @@ function submit() {
     })
 }
 
-export {submit};
-
-
-
-                          //'parentComponentName'
+export {displayData};
