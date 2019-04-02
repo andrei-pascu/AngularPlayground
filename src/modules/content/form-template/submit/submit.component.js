@@ -1,16 +1,24 @@
 import {template} from './submit.template';
 
+class Ctrl {
+    x(){}
+}
+
 function submit() {
     var app = angular.module('myApp');
     
-    let myCustomInputSubmitTemplate = `
-        <div class="form-submit-wrapper">
-            <input ng-disabled="aForm.$invalid" type="submit" id="submit" value="Submit" />
-        </div>
-        `
     app.component('myCustomInputSubmit', {
-        template: myCustomInputSubmitTemplate
+        template: template,
+        controller: Ctrl,
+        controllerAs: '$ctrl',
+        require: {
+          dependencyCtrl: '^myCustomForm'
+        }
     })
 }
 
 export {submit};
+
+
+
+                          //'parentComponentName'

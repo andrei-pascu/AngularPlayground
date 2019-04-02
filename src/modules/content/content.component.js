@@ -3,16 +3,25 @@ import {formTemplate} from './form-template/form-template.component';
 
 
 function appMainComponent() {
-    // console.log('content.component.js loaded')
     var app = angular.module('myApp');
 
     formTemplate()
     app.component('appMainComponent', {
         template: template
-    })
+    });
 }
 
 export {appMainComponent};
+
+
+
+
+
+
+
+
+
+// console.log('content.component.js loaded')
 // export const theComponent = {
 //   controller: ComponentController,
 //   template,

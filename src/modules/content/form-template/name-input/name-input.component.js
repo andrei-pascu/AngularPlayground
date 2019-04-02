@@ -2,6 +2,48 @@ import {template} from './name-input.template';
 
 class Ctrl {
     getFormState($event) {
+        var data = this.name
+        this.dependencyCtrl.getValidityState()
+    }
+}
+
+function nameInput() {
+    var app = angular.module('myApp');
+    app.component('myCustomInput1', {
+        template: template,
+        bindings: {
+            passing: '=',
+            formReference: '<'
+        },
+        controller: Ctrl,
+        controllerAs: '$ctrl',
+        require: {
+          dependencyCtrl: '^myCustomForm'
+        }
+    })
+}
+
+export {nameInput};
+
+
+
+
+
+
+
+    //QUESTIONS:
+    //How to check valid state
+    //How to emit data to parent
+    //How to emit valid state to form component
+            // value: '<',
+            // onChange: '&',
+            // omega: '&',
+            // dataTest: '='
+
+
+        //Binds data to Ctrl
+                          //'parentComponentName'
+            
         // console.log(this.formReference)
         //INFO:
         //prints only if it's valid
@@ -21,39 +63,7 @@ class Ctrl {
         // }
         
         // console.log(this)
-        var data = this.name
-        console.log(this.dependencyCtrl.aForm.name.$valid)
-        // this.dependencyCtrl.getValidityState()
+        // console.log(this.dependencyCtrl.aForm.name.$valid)
         //INFO: Getting data from child components into progress bar
         // this.dependencyCtrl.getValidityState(0, data.length)
         // this.dependencyCtrl.getValidityState(0, data)
-    }
-}
-
-function nameInput() {
-    var app = angular.module('myApp');
-    //QUESTIONS:
-    //How to check valid state
-    //How to emit data to parent
-    //How to emit valid state to form component
-    app.component('myCustomInput1', {
-        template: template,
-        //Binds data to Ctrl
-        bindings: {
-            // value: '<',
-            // onChange: '&',
-            // omega: '&',
-            // dataTest: '='
-            passing: '=',
-            formReference: '<'
-        },
-        controller: Ctrl,
-        controllerAs: '$ctrl',
-        require: {
-                          //'parentComponentName'
-          dependencyCtrl: '^myCustomForm'
-        }
-    })
-}
-
-export {nameInput};

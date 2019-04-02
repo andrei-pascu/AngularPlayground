@@ -2,7 +2,6 @@ import {template} from './form-completion.template';
 
 class Ctrl {
     myTest() {
-        // console.log(this)
     }
 }
 
@@ -16,10 +15,17 @@ function formCompletion() {
         controller: Ctrl,
         controllerAs: '$ctrl',
         require: {
-                          //'parentComponentName'
           dependencyCtrl: '^myCustomForm'
         }
     })
 }
 
 export {formCompletion};
+
+
+
+
+
+
+            // console.log(this)
+                          //'parentComponentName'

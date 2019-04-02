@@ -2,20 +2,11 @@ import {template} from './email-input.template';
 
 class Ctrl {
     nameValidation($event) {
-        // console.log(this.formReference.email.$$classCache)
         var value = this.email
-        // console.log(value)
         this.onChange({
             $value: value
         })
-        //FAILED:
-        // console.log($ctrl.email.$valid)
-
         this.dependencyCtrl.getValidityState()
-        // var data = this.email
-        //INFO: Getting data from child components into progress bar
-        // this.dependencyCtrl.getValidityState(1, data.length)
-        // this.dependencyCtrl.getValidityState(1, data)
     }
 }
 
@@ -30,10 +21,26 @@ function emailInput() {
         controller: Ctrl,
         controllerAs: '$ctrl',
         require: {
-                          //'parentComponentName'
           dependencyCtrl: '^myCustomForm'
         }
     })
 }
 
 export {emailInput};
+
+
+
+
+
+
+
+
+        // console.log(this.formReference.email.$$classCache)
+        // console.log(value)
+        //FAILED:
+        // console.log($ctrl.email.$valid)
+                          //'parentComponentName'
+        // var data = this.email
+        //INFO: Getting data from child components into progress bar
+        // this.dependencyCtrl.getValidityState(1, data.length)
+        // this.dependencyCtrl.getValidityState(1, data)
